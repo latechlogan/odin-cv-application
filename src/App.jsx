@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./App.css";
 import "./CVDisplay.jsx";
 import "./CVForm.jsx";
 import CVDisplay from "./CVDisplay.jsx";
