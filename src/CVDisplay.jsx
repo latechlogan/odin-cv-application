@@ -1,3 +1,7 @@
-export default function CVDisplay() {
-  return <h2>CVDisplay works!</h2>;
+export default function CVDisplay({ generalInfo }) {
+  return (
+    <>
+      <h1>CVDisplay: Hello {generalInfo.firstName}</h1>
+    </>
+  );
 }

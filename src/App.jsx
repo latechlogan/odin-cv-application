@@ -6,13 +6,31 @@ import CVForm from "./CVForm.jsx";
 import { sampleGeneralInfo } from "./sampleData.js";
 
 function App() {
+  const [editMode, setEditMode] = useState(false);
   const [generalInfo, setGeneralInfo] = useState({ ...sampleGeneralInfo });
+
+  function handleSubmit() {
+    setEditMode(!editMode);
+    // setGeneralInfo()
+  }
+
+  function handleEdit() {
+    setEditMode(!editMode);
+  }
 
   return (
     <>
-      <h1>Hello {generalInfo.firstName}</h1>
-      <CVDisplay />
-      <CVForm />
+      {editMode ? (
+        <>
+          <CVForm />
+          <button onClick={handleSubmit}>Submit</button>
+        </>
+      ) : (
+        <>
+          <CVDisplay generalInfo={generalInfo} />
+          <button onClick={handleEdit}>Edit</button>
+        </>
+      )}
     </>
   );
 }
