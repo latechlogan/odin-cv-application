@@ -31,6 +31,42 @@ export default function CVForm({ initialData, toggleEditMode, onSubmit }) {
           onChange={handleInput}
         ></input>
 
+        <label htmlFor="lastName">Last Name </label>
+        <input
+          type="text"
+          id="lastName"
+          name="lastName"
+          value={formData.lastName}
+          onChange={handleInput}
+        ></input>
+
+        <label htmlFor="position">Position </label>
+        <input
+          type="text"
+          id="position"
+          name="position"
+          value={formData.position}
+          onChange={handleInput}
+        ></input>
+
+        <label htmlFor="phone">Phone </label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          value={formData.phone}
+          onChange={handleInput}
+        ></input>
+
+        <label htmlFor="email">Email </label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          value={formData.email}
+          onChange={handleInput}
+        ></input>
+
         <button type="submit" onClick={handleSubmit}>
           Submit
         </button>

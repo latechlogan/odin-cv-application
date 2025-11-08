@@ -8,6 +8,7 @@ const sampleGeneralInfo = {
 
 const sampleExperience = [
   {
+    id: crypto.randomUUID(),
     companyName: "Blue Cross Blue Shield Louisiana",
     positionTitle: "Frontend Developer",
     responsibilities:
@@ -16,6 +17,7 @@ const sampleExperience = [
     dateEnd: null,
   },
   {
+    id: crypto.randomUUID(),
     companyName: "Century Marketing Solutions",
     positionTitle: "Sr. Graphic Designer",
     responsibilities:
@@ -24,6 +26,7 @@ const sampleExperience = [
     dateEnd: 2019,
   },
   {
+    id: crypto.randomUUID(),
     companyName: "Vantage Health Plan",
     positionTitle: "Web & Graphic Design Coordinator",
     responsibilities:
@@ -35,6 +38,7 @@ const sampleExperience = [
 
 const sampleEducation = [
   {
+    id: crypto.randomUUID(),
     schoolName: "Louisiana Tech University",
     degree: "Bachelor of Fine Arts",
     areaOfStudy: "Communication Design",
