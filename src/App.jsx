@@ -10,22 +10,26 @@ import {
 function App() {
   const [editMode, setEditMode] = useState(false);
   const [generalInfo, setGeneralInfo] = useState(sampleGeneralInfo);
-  const [education, setEducation] = useState(sampleEducation);
   const [experience, setExperience] = useState(sampleExperience);
+  const [education, setEducation] = useState(sampleEducation);
 
   function toggleEditMode() {
     setEditMode(!editMode);
   }
 
   function handleSubmit(data) {
-    setGeneralInfo(data);
+    setGeneralInfo(data.generalInfo);
+    setExperience(data.experience);
+    setEducation(data.education);
   }
 
   return (
     <div>
       {editMode ? (
         <CVForm
-          initialData={generalInfo}
+          initGeneralInfo={generalInfo}
+          initExperience={experience}
+          initEducation={education}
           toggleEditMode={toggleEditMode}
           onSubmit={handleSubmit}
         />

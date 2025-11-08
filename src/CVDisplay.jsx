@@ -55,10 +55,10 @@ export default function CVDisplay({
   }
 
   return (
-    <div className="bg-zinc-100 p-8">
+    <div className="text-gray-700 bg-slate-100 p-8">
       <button
         onClick={toggleEditMode}
-        className="bg-zinc-100 border-1 border-zinc-400 rounded-sm px-4 py-1"
+        className="bg-slate-100 border-1 border-slate-400 rounded-sm px-4 py-1"
       >
         Edit
       </button>
