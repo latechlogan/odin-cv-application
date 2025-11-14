@@ -55,14 +55,14 @@ export default function CVDisplay({
   }
 
   return (
-    <div className="text-gray-700 bg-slate-100 p-8">
+    <div className="text-gray-700 bg-gray-100 p-12">
       <button
         onClick={toggleEditMode}
-        className="bg-slate-100 border-1 border-slate-400 rounded-sm px-4 py-1"
+        className="bg-gray-100 border-1 border-gray-400 rounded-sm px-4 py-1"
       >
         Edit
       </button>
-      <div className="p-8 bg-white grid grid-template-cols-1 grid-template-rows-3 gap-8 max-w-screen-md mx-auto shadow-xl rounded-sm">
+      <div className="p-8 pb-12 bg-white grid grid-template-cols-1 grid-template-rows-3 gap-8 max-w-screen-md mx-auto shadow-xl rounded-sm">
         <GeneralInfoSection />
         <ExperienceSection />
         <EducationSection />

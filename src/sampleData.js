@@ -14,7 +14,7 @@ const sampleExperience = [
     responsibilities:
       "Lead frontend developer for stakeholder-driven web applications including myaffinityhealth.com and monroesurgical.com, implementing responsive design and modern web standards, key contributor to blueadvantage.lablue.com with additional development work on bcbsla.com and primewellhealth.com, implement and maintain WCAG Level A/AA compliance across web properties using SiteImprove accessibility auditing tools, collaborate with cross-functional teams using Azure DevOps for version control, code review, and deployment pipelines (dev → UAT → production), build mobile-first, responsive layouts using CSS Grid, Flexbox, and modern CSS techniques, bridge communication between design and development teams to ensure pixel-perfect implementation and optimal user experience",
     dateStart: 2020,
-    dateEnd: null,
+    dateEnd: undefined,
   },
   {
     id: crypto.randomUUID(),
@@ -30,7 +30,7 @@ const sampleExperience = [
     companyName: "Vantage Health Plan",
     positionTitle: "Web & Graphic Design Coordinator",
     responsibilities:
-      "Led frontend development for major website redesign, implementing mobile responsiveness and improved user experience, maintained and enhanced existing web properties using HTML, CSS, and JavaScript/jQuery, developed and applied corporate branding standards across print and digital materials, collaborated with stakeholders to translate business requirements into technical solutions",
+      "Led frontend development for major website redesign, implementing mobile responsiveness and improved user experience, maintained and enhanced existing web properties using HTML, CSS, and JavaScript/jQuery, developed and applied corporate branding standards across print and digital materials, collaborated with stakeholders to trangray business requirements into technical solutions",
     dateStart: 2018,
     dateEnd: 2016,
   },
