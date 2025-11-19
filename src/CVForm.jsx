@@ -1,6 +1,11 @@
 import { useState } from "react";
 
-function ExperienceInput({ obj, index, handleExperienceInput }) {
+function ExperienceInput({
+  obj,
+  index,
+  handleExperienceInput,
+  handleDeleteExperience,
+}) {
   return (
     <div className="flex flex-wrap flex-row mb-12">
       <div className="w-full md:w-1/2 flex flex-col pr-4 mb-4 gap-2">
@@ -83,13 +88,25 @@ function ExperienceInput({ obj, index, handleExperienceInput }) {
           className="appearance-none text-gray-400 focus:text-gray-600 bg-gray-100 border border-gray-300 p-2 rounded-md"
         ></input>
       </div>
+      <button
+        type="button"
+        onClick={() => handleDeleteExperience(index)}
+        className="cursor-pointer text-red-700 text-sm"
+      >
+        Delete Experience
+      </button>
     </div>
   );
 }
 
-function EducationInput({ obj, index, handleEducationInput }) {
+function EducationInput({
+  obj,
+  index,
+  handleEducationInput,
+  handleDeleteEducation,
+}) {
   return (
-    <>
+    <div className="flex flex-wrap flex-row mb-12">
       <div className="w-full md:w-1/2 flex flex-col pr-4 mb-4 gap-2">
         <label
           className="text-xs uppercase text-gray-600"
@@ -170,7 +187,14 @@ function EducationInput({ obj, index, handleEducationInput }) {
           className="appearance-none text-gray-400 focus:text-gray-600 bg-gray-100 border border-gray-300 p-2 rounded-md"
         ></input>
       </div>
-    </>
+      <button
+        type="button"
+        onClick={() => handleDeleteEducation(index)}
+        className="cursor-pointer text-red-700 text-sm"
+      >
+        Delete Education
+      </button>
+    </div>
   );
 }
 
@@ -208,6 +232,42 @@ export default function CVForm({
       [name]: value,
     };
     setFormExperience(updatedExperience);
+  }
+
+  function handleAddExperience() {
+    const newExperience = {
+      id: crypto.randomUUID(),
+      companyName: "",
+      positionTitle: "",
+      responsibilities: "",
+      dateStart: "",
+      dateEnd: "",
+    };
+
+    setFormExperience([...formExperience, newExperience]);
+  }
+
+  function handleDeleteExperience(index) {
+    const updatedExperience = formExperience.filter((obj, i) => i !== index);
+    setFormExperience(updatedExperience);
+  }
+
+  function handleAddEducation() {
+    const newEducation = {
+      id: crypto.randomUUID(),
+      companyName: "",
+      positionTitle: "",
+      responsibilities: "",
+      dateStart: "",
+      dateEnd: "",
+    };
+
+    setFormEducation([...formEducation, newEducation]);
+  }
+
+  function handleDeleteEducation(index) {
+    const updatedEducation = formEducation.filter((obj, i) => i !== index);
+    setFormEducation(updatedEducation);
   }
 
   function handleEducationInput(index, e) {
@@ -322,9 +382,17 @@ export default function CVForm({
                 index={index}
                 key={obj.id}
                 handleExperienceInput={handleExperienceInput}
+                handleDeleteExperience={handleDeleteExperience}
               />
             );
           })}
+          <button
+            type="button"
+            onClick={handleAddExperience}
+            className="cursor-pointer rounded-sm px-4 py-2 bg-gray-100"
+          >
+            Add Experience
+          </button>
         </fieldset>
 
         <fieldset className="flex flex-wrap flex-row mb-12" id="education">
@@ -336,9 +404,17 @@ export default function CVForm({
                 index={index}
                 key={obj.id}
                 handleEducationInput={handleEducationInput}
+                handleDeleteEducation={handleDeleteEducation}
               />
             );
           })}
+          <button
+            type="button"
+            onClick={handleAddEducation}
+            className="cursor-pointer rounded-sm px-4 py-2 bg-gray-100"
+          >
+            Add Education
+          </button>
         </fieldset>
 
         <button

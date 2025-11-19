@@ -23,7 +23,7 @@ export default function CVDisplay({
       <div>
         <h2 className="text-3xl font-semibold mb-4">Experience</h2>
         {experience.map((obj) => (
-          <div key={obj.id} className="mb-4 last:mb-0">
+          <div key={obj.id} className="mb-8 last:mb-0">
             <h3 className="font-semibold text-lg">{obj.companyName}</h3>
             <p className="mb-4">
               <span className="font-semibold">{obj.positionTitle}</span>
@@ -42,7 +42,7 @@ export default function CVDisplay({
       <div>
         <h2 className="text-3xl font-semibold mb-4">Education</h2>
         {education.map((obj) => (
-          <div key={obj.id}>
+          <div key={obj.id} className="mb-4">
             <h3 className="font-semibold text-lg">{obj.schoolName}</h3>
             <p>
               {obj.degree}, {obj.areaOfStudy}&ensp;|&ensp;{obj.dateStart}
@@ -56,13 +56,13 @@ export default function CVDisplay({
 
   return (
     <div className="text-gray-700 bg-gray-100 p-12">
-      <button
-        onClick={toggleEditMode}
-        className="bg-gray-100 border-1 border-gray-400 rounded-sm px-4 py-1"
-      >
-        Edit
-      </button>
-      <div className="p-8 pb-12 bg-white grid grid-template-cols-1 grid-template-rows-3 gap-8 max-w-screen-md mx-auto shadow-xl rounded-sm">
+      <div className="p-8 pb-12 bg-white grid grid-template-cols-1 grid-template-rows-3 gap-8 max-w-screen-md mx-auto shadow-xl rounded-sm relative">
+        <button
+          onClick={toggleEditMode}
+          className="bg-gray-100 border-1 border-gray-400 rounded-sm px-4 py-1 absolute top-12 right-12"
+        >
+          Edit
+        </button>
         <GeneralInfoSection />
         <ExperienceSection />
         <EducationSection />
